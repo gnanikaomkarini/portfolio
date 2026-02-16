@@ -133,6 +133,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .home-intro {
@@ -141,4 +143,16 @@ body {
 
 .home-photo {
     margin-left: 20px;
+}
+
+@media (max-width: 600px) {
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-photo {
+        margin-left: 0;
+        margin-top: 20px;
+    }
 }
