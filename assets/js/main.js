@@ -60,9 +60,9 @@ function ${a.title.replace(/ /g, '_')}() {
         'education.html': (data) => `
 <div class="institution">${data.education.institution}</div>
 <div class="degree">${data.education.degree}</div>
-<div class="details">
-    <p>CGPA: ${data.education.cgpa}</p>
-    <p>Period: ${data.education.period}</p>
+<div class="education-details">
+    <p class="cgpa">CGPA: ${data.education.cgpa}</p>
+    <p class="period">Period: ${data.education.period}</p>
 </div>
 `,
         'contact.sh': (data) => `
