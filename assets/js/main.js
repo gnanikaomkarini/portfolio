@@ -147,7 +147,6 @@ echo "GitHub: ${data.contact.github}"
         window.portfolioData = data;
         renderFileList();
         openFile('home.md', data);
-        terminalContent.innerHTML = `Welcome to the terminal. You can explore the files on the left.<br>Last login: ${new Date().toString()}<br><br><b>Reminder:</b> Please add your photo to the 'assets/images/Gnanika_Makkena_Formal.jpeg' path.`;
     };
 
     // Fetch the portfolio data and initialize the application
