@@ -2,11 +2,11 @@
   "name": "Gnanika Omkarini Makkena",
   "photo": "assets/images/Gnanika_Makkena_Formal.jpeg",
   "contact": {
-    "email": "gnanika.makkena@example.com",
-    "linkedin": "https://linkedin.com/in/gnanika-makkena",
-    "github": "https://github.com/Gnanika-20",
-    "leetcode": "https://leetcode.com/gnanika_20/",
-    "codeforces": "https://codeforces.com/profile/gnanika_20"
+    "email": "gnanikaomkarini@gmail.com",
+    "linkedin": "https://linkedin.com/in/gnanika-makkena/",
+    "github": "https://github.com/gnanikaomkarini",
+    "leetcode": "https://leetcode.com/gn_an",
+    "codeforces": "https://codeforces.com/profile/gnanikaomkarini"
   },
   "education": {
     "institution": "BVRIT HYDERABAD College of Engineering for Women",
@@ -52,25 +52,25 @@
     {
       "title": "3rd Place Winner",
       "organization": "LinkedIn Coachin Hackathon",
-      "period": "05/2025 - 07/2025",
+      "period": "05 2025 -- 07 2025",
       "description": "Won 3rd Place in the Generative AI Hackathon among 80 mentees selected from 18000+ applicants (top 0.00001%)"
     },
     {
       "title": "LinkedIn Coachin Mentee",
       "organization": "LinkedIn",
-      "period": "03/2025 - 07/2025",
+      "period": "03 2025 -- 07 2025",
       "description": "Chosen for an exclusive five-month mentorship program empowering women in tech, selected from over 18,000 applicants (top 0.4%) as one of 80 mentees from across India."
     },
     {
       "title": "Student Upskilling LaunchPad",
       "organization": "Google",
-      "period": "04/2025 - 04/2025",
+      "period": "04 2025 -- 04 2025",
       "description": "Received technical interview preparation, and career development training to build a competitive edge for roles in technology as a part of the invite-only program."
     },
     {
       "title": "DESIS Ascend Educare Mentee",
       "organization": "The D.E Shaw Group",
-      "period": "10/2g24 - 03/2025",
+      "period": "10 2024 -- 03 2025",
       "description": "Selected as one of 80 women from 18,000+ applicants (top 0.4%) from across India for the six-month mentorship program."
     }
   ],
@@ -91,28 +91,28 @@
     {
       "title": "MentorMatch.ai",
       "stack": ["Next.js", "Tailwind CSS", "Flask (Python)", "MongoDB"],
-      "period": "05/2025 - 06/2025",
+      "period": "05 2025 -- 06 2025",
       "description": "Designed and developed an AI-powered mentorship platform connecting students and professionals, featuring intelligent mentor matching, personalized learning roadmaps, progress tracking, contextual feedback, AI-driven interviews and assessments, real-time chat, and mentor-mentee meet scheduling — built as part of the LinkedIn Coachin Program.",
-      "link": "#"
+      "link": "https://github.com/gnanikaomkarini/MentorMatch.ai/"
     },
     {
       "title": "Slotify - The Timetable Generator",
       "stack": ["Elixir", "Phoenix LiveView", "Python"],
-      "period": "09/2025 - 10/2025",
+      "period": "09 2025 -- 10 2025",
       "description": "Designed and developed an automated timetable generator using a hybrid Greedy + Genetic Algorithm approach, tailored to institution-specific academic rules and constraints, to generate conflict-free class schedules at the start of each semester.",
-      "link": "#"
+      "link": "https://gitlab.com/team-slotify/slotify/"
     },
     {
       "title": "FundFlock – Save Money Together",
       "stack": ["Flutter", "TypeScript", "Node.js", "MongoDB"],
-      "period": "02/2025 - 04/2025",
+      "period": "02 2025 -- 04 2025",
       "description": "Developed a collaborative financial platform for groups to manage shared budgets, track contributions in real-time, and visualize financial goals — built during the DESIS Ascend Educare Program.",
-      "link": "#"
+      "link": "https://github.com/ayushka11/FundFlock"
     },
     {
       "title": "MasterWord",
       "stack": ["Next.js", "Tailwind CSS", "Flask (Python)", "MongoDB"],
-      "period": "05/2025 - 06/2025",
+      "period": "05 2025 -- 06 2025",
       "description": "Contributed to the development of Masterword, a word-based gaming platform featuring two game modes — Wordle and Mastermind — supporting real-time game logic, user statistics tracking, and complete gameplay history with performance insights.",
       "link": "#"
     },
@@ -120,7 +120,7 @@
       "title": "Automated Birthday Email System",
       "stack": ["Python", "Pandas", "OpenPyXL", "SMTP"],
       "description": "Designed and developed a solo automation project that identifies students whose birthdays fall on the current date and automatically sends them birthday wishes via email.",
-      "link": "#"
+      "link": "https://github.com/gnanikaomkarini/Automated-Birthday-Email-System"
     }
   ]
 }
