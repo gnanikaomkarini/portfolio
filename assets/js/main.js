@@ -108,7 +108,7 @@ function ${a.title.replace(/ /g, '_')}() {
     const renderEditor = () => {
         if (activeFile) {
             if (activeFile === 'home.md' || activeFile === 'projects.json' || activeFile === 'contact.sh') {
-                editor.innerHTML = files[activeFile](window.portfolioData);
+                editor.innerHTML = openFiles[activeFile];
                 return;
             }
             const lang = activeFile.split('.').pop();
