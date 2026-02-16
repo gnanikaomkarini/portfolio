@@ -66,9 +66,12 @@ function ${a.title.replace(/ /g, '_')}() {
 </div>
 `,
         'contact.sh': (data) => `
-echo "Email: ${data.contact.email}"
-echo "LinkedIn: ${data.contact.linkedin}"
-echo "GitHub: ${data.contact.github}"
+<h2>Contact Information</h2>
+<p><strong>Email:</strong> <a href="mailto:${data.contact.email}">${data.contact.email}</a></p>
+<p><strong>LinkedIn:</strong> <a href="${data.contact.linkedin}" target="_blank">${data.contact.linkedin}</a></p>
+<p><strong>GitHub:</strong> <a href="${data.contact.github}" target="_blank">${data.contact.github}</a></p>
+<p><strong>LeetCode:</strong> <a href="${data.contact.leetcode}" target="_blank">${data.contact.leetcode}</a></p>
+<p><strong>Codeforces:</strong> <a href="${data.contact.codeforces}" target="_blank">${data.contact.codeforces}</a></p>
 `,
     };
 
@@ -104,12 +107,8 @@ echo "GitHub: ${data.contact.github}"
      */
     const renderEditor = () => {
         if (activeFile) {
-            if (activeFile === 'home.md') {
+            if (activeFile === 'home.md' || activeFile === 'projects.json' || activeFile === 'contact.sh') {
                 editor.innerHTML = files[activeFile](window.portfolioData);
-                return;
-            }
-            if (activeFile === 'projects.json') { // New condition for projects.json
-                editor.innerHTML = openFiles[activeFile];
                 return;
             }
             const lang = activeFile.split('.').pop();
