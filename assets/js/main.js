@@ -8,13 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeFile = null;
 
     const files = {
-        'home.md': (data) => `# ${data.name}\n\nWelcome to my interactive portfolio. Click on the files to the left to learn more about me.`,
+        'home.md': (data) => `
+<div class="home-container">
+    <div class="home-intro">
+        <h1>${data.name}</h1>
+        <p>Welcome to my interactive portfolio. Click on the files to the left to learn more about me.</p>
+    </div>
+    <div class="home-photo">
+        <img src="${data.photo}" alt="Gnanika Makkena" width="150" style="border-radius: 50%;">
+    </div>
+</div>
+`,
         'skills.css': (data) => `
 .skills {
     technical: [${data.skills.technical.map(skill => `'${skill}'`).join(', ')}];
     soft: [${data.skills.soft.map(skill => `'${skill}'`).join(', ')}];
 }`,
-        'projects.json': (data) => JSON.stringify(data.projects, null, 2),
+        'projects.json': (data) => JSON.stringify(data.projects.map(p => ({...p, link: p.link || '#'})), null, 2),
         'achievements.js': (data) => `
 ${data.achievements.map(a => `
 // ${a.organization} (${a.period})
@@ -24,10 +34,12 @@ function ${a.title.replace(/ /g, '_')}() {
 `).join('\n')}
 `,
         'education.html': (data) => `
-<h1>${data.education.institution}</h1>
-<h2>${data.education.degree}</h2>
-<p>CGPA: ${data.education.cgpa}</p>
-<p>Period: ${data.education.period}</p>
+<div class="institution">${data.education.institution}</div>
+<div class="degree">${data.education.degree}</div>
+<div class="details">
+    <p>CGPA: ${data.education.cgpa}</p>
+    <p>Period: ${data.education.period}</p>
+</div>
 `,
         'contact.sh': (data) => `
 echo "Email: ${data.contact.email}"
@@ -59,6 +71,10 @@ echo "GitHub: ${data.contact.github}"
 
     const renderEditor = () => {
         if (activeFile) {
+            if (activeFile === 'home.md') {
+                editor.innerHTML = files[activeFile](window.portfolioData);
+                return;
+            }
             const lang = activeFile.split('.').pop();
             const code = document.createElement('code');
             code.className = `language-${lang}`;
@@ -106,7 +122,7 @@ echo "GitHub: ${data.contact.github}"
         window.portfolioData = data;
         renderFileList();
         openFile('home.md', data);
-        terminalContent.innerHTML = `Welcome to the terminal. You can explore the files on the left.<br>Last login: ${new Date().toString()}`;
+        terminalContent.innerHTML = `Welcome to the terminal. You can explore the files on the left.<br>Last login: ${new Date().toString()}<br><br><b>Reminder:</b> Please add your photo to the 'assets/images/Gnanika_Makkena_Formal.jpeg' path.`;
     };
 
     fetch('assets/data/data.json')
