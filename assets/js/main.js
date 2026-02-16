@@ -1,12 +1,17 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Get references to DOM elements
     const fileList = document.getElementById('file-list');
     const tabsContainer = document.getElementById('tabs');
     const editor = document.getElementById('editor');
     const terminalContent = document.getElementById('terminal-content');
 
+    // Initialize state variables
     let openFiles = {};
     let activeFile = null;
 
+    // Define the content of each file
     const files = {
         'home.md': (data) => `
 <div class="home-container">
@@ -48,6 +53,9 @@ echo "GitHub: ${data.contact.github}"
 `,
     };
 
+    /**
+     * Renders the file list in the explorer.
+     */
     const renderFileList = () => {
         fileList.innerHTML = '';
         for (const fileName in files) {
@@ -58,6 +66,9 @@ echo "GitHub: ${data.contact.github}"
         }
     };
 
+    /**
+     * Renders the open file tabs.
+     */
     const renderTabs = () => {
         tabsContainer.innerHTML = '';
         for (const fileName in openFiles) {
@@ -69,6 +80,9 @@ echo "GitHub: ${data.contact.github}"
         }
     };
 
+    /**
+     * Renders the content of the active file in the editor.
+     */
     const renderEditor = () => {
         if (activeFile) {
             if (activeFile === 'home.md') {
@@ -91,6 +105,11 @@ echo "GitHub: ${data.contact.github}"
         }
     };
     
+    /**
+     * Opens a file and displays its content in the editor.
+     * @param {string} fileName - The name of the file to open.
+     * @param {object} data - The portfolio data.
+     */
     const openFile = (fileName, data) => {
         if (!openFiles[fileName]) {
             openFiles[fileName] = files[fileName](data);
@@ -104,12 +123,14 @@ echo "GitHub: ${data.contact.github}"
         });
     };
 
+    // Add event listener for file list clicks
     fileList.addEventListener('click', (e) => {
         if (e.target.tagName === 'LI') {
             openFile(e.target.dataset.file, window.portfolioData);
         }
     });
 
+    // Add event listener for tab clicks
     tabsContainer.addEventListener('click', (e) => {
         if (e.target.classList.contains('tab')) {
             activeFile = e.target.dataset.file;
@@ -118,6 +139,10 @@ echo "GitHub: ${data.contact.github}"
         }
     });
     
+    /**
+     * Initializes the application.
+     * @param {object} data - The portfolio data.
+     */
     const init = (data) => {
         window.portfolioData = data;
         renderFileList();
@@ -125,6 +150,7 @@ echo "GitHub: ${data.contact.github}"
         terminalContent.innerHTML = `Welcome to the terminal. You can explore the files on the left.<br>Last login: ${new Date().toString()}<br><br><b>Reminder:</b> Please add your photo to the 'assets/images/Gnanika_Makkena_Formal.jpeg' path.`;
     };
 
+    // Fetch the portfolio data and initialize the application
     fetch('assets/data/data.json')
         .then(response => response.json())
         .then(data => init(data))
