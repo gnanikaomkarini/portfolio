@@ -29,7 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
     technical: [${data.skills.technical.map(skill => `'${skill}'`).join(', ')}];
     soft: [${data.skills.soft.map(skill => `'${skill}'`).join(', ')}];
 }`,
-        'projects.json': (data) => JSON.stringify(data.projects.map(p => ({...p, link: p.link || '#'})), null, 2),
+        'projects.json': (data) => {
+            let projectsHtml = '<h2>Projects</h2>';
+            data.projects.forEach(p => {
+                projectsHtml += `
+<div class="project-item">
+    <h3>`;
+                if (p.link && p.link !== '#') {
+                    projectsHtml += `<a href="${p.link}" target="_blank">${p.title}</a>`;
+                } else {
+                    projectsHtml += p.title;
+                }
+                projectsHtml += `
+    </h3>
+    <p class="project-stack"><strong>Stack:</strong> ${p.stack.join(', ')}</p>
+    <p class="project-period"><strong>Period:</strong> ${p.period}</p>
+    <p class="project-description">${p.description}</p>
+</div>`;
+            });
+            return projectsHtml;
+        },
         'achievements.js': (data) => `
 ${data.achievements.map(a => `
 // ${a.organization} (${a.period})
@@ -87,6 +106,10 @@ echo "GitHub: ${data.contact.github}"
         if (activeFile) {
             if (activeFile === 'home.md') {
                 editor.innerHTML = files[activeFile](window.portfolioData);
+                return;
+            }
+            if (activeFile === 'projects.json') { // New condition for projects.json
+                editor.innerHTML = openFiles[activeFile];
                 return;
             }
             const lang = activeFile.split('.').pop();

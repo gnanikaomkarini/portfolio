@@ -156,3 +156,39 @@ body {
         margin-top: 20px;
     }
 }
+
+.project-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-item:last-child {
+    border-bottom: none;
+}
+
+.project-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.project-item h3 a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.project-item h3 a:hover {
+    text-decoration: underline;
+}
+
+.project-stack, .project-period {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.project-description {
+    font-size: 1em;
+    line-height: 1.5;
+}
